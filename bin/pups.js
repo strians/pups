@@ -2,4 +2,4 @@
 
 const Pups = require('..');
 
-new Pups.Client();
+new Pups.Client(process.argv);
