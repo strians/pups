@@ -1,0 +1,41 @@
+{
+  "name": "pups",
+  "version": "0.1.0",
+  "description": "SharePoint file uploader",
+  "main": "index.js",
+  "bin": {
+    "pups": "./bin/pups.js"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "sarif": "eslint bin src -f node_modules/@microsoft/eslint-formatter-sarif/sarif.js -o eslint.sarif || exit 0",
+    "lint": "eslint bin src || exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strians/pups.git"
+  },
+  "keywords": [
+    "sharepoint",
+    "online",
+    "file-uploader"
+  ],
+  "author": "Paul Holden",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/strians/pups/issues"
+  },
+  "homepage": "https://github.com/strians/pups#readme",
+  "dependencies": {
+    "@wmfs/sharepoint": "^1.7.0",
+    "commander": "^6.2.0",
+    "yaml": "^1.10.0"
+  },
+  "devDependencies": {
+    "@microsoft/eslint-formatter-sarif": "^2.1.5",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.14.0"
+  }
+}
