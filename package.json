@@ -8,8 +8,8 @@
   },
   "scripts": {
     "build": "babel src -d dist",
-    "sarif": "eslint bin src -f node_modules/@microsoft/eslint-formatter-sarif/sarif.js -o eslint.sarif || exit 0",
-    "lint": "eslint bin src || exit 0",
+    "sarif": "eslint src -f node_modules/@microsoft/eslint-formatter-sarif/sarif.js -o eslint.sarif || exit 0",
+    "lint": "eslint src || exit 0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
