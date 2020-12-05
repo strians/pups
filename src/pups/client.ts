@@ -4,9 +4,11 @@ import * as SharePoint from '@wmfs/sharepoint';
 import { version } from '../../package.json';
 
 export class Client {
-  constructor(argv) {
-    this.program = new Command();
+  program = new Command();
+
+  constructor(public argv: string[]) {
     this.program.version(version, '-v, --version', 'print current version');
-    this.program.parse(argv);
+    this.program.option('-p, --profile <name>', 'upload config profile');
+    this.program.parse(this.argv);
   }
 }
