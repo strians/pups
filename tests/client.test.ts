@@ -12,12 +12,14 @@ describe('Pups.Client', () => {
     jest.clearAllMocks();
   });
 
-  test('version', async () => {
-    // Commander uses process.stdout.write to print version
-    jest.spyOn(global.process.stdout, 'write');
-    // Commander calls process.exit after printing version, so stub it
-    jest.spyOn(process, 'exit').mockReturnValueOnce(null as never);
-    new Pups.Client(['node', 'pups', '-v']);
-    expect(process.stdout.write).toHaveBeenCalledWith('11.12.13\n');
+  describe('command-line arguments', () => {
+    test('version', () => {
+      // Commander uses process.stdout.write to print version
+      jest.spyOn(global.process.stdout, 'write');
+      // Commander calls process.exit after printing version, so stub it
+      jest.spyOn(process, 'exit').mockReturnValueOnce(null as never);
+      new Pups.Client(['node', 'pups', '-v']);
+      expect(process.stdout.write).toHaveBeenCalledWith('11.12.13\n');
+    });
   });
 });
