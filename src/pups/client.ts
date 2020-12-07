@@ -15,4 +15,8 @@ export class Client {
     this.program.option('-p, --profile <name>', 'upload config profile');
     this.program.parse(this.argv);
   }
+
+  get profile(): string {
+    return this.program.profile || 'default';
+  }
 }

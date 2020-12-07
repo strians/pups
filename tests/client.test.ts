@@ -22,4 +22,9 @@ describe('Pups.Client', () => {
       expect(process.stdout.write).toHaveBeenCalledWith('11.12.13\n');
     });
   });
+
+  test('profile', () => {
+    let client = new Pups.Client(['node', 'pups', '-p', 'pupsfile']);
+    expect(client.profile).toEqual('pupsfile');
+  });
 });
