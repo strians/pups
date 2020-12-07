@@ -2,7 +2,7 @@
   "name": "pups",
   "version": "0.1.0",
   "description": "SharePoint file uploader",
-  "main": "index.js",
+  "main": "dist/pups.js",
   "bin": {
     "pups": "./bin/pups.js"
   },
